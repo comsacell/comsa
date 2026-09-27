@@ -13,7 +13,7 @@ const TEAM_MEMBERS = [
         name: "Prasad Chitnis",
         role: "Vice-chair",
         img: "assets/prasad.jpeg",
-        bio: "I am Prasad Amit Chitnis a Third year driven by a passion for technology, community building, and hands-on innovation. Let's connect and build the future of electronics and telecommunications together",
+        bio: "I am Prasad Amit Chitnis a Third year ETC Engineering student driven by a passion for technology, community building, and hands-on innovation. Let's connect and build the future of electronics and telecommunications together",
         email: "connect.with.prasad.chitnis@gmail.com",
         linkedin: "https://www.linkedin.com/in/prasad-chitnis-2000b232a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
     },

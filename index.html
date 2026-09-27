@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMSA - Communication Students Association | DKTE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // blue-900
+                        secondary: '#3b82f6', // blue-500
+                        accent: '#f59e0b', // amber-500
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-slate-900/50 text-gray-800 dark:text-slate-200 dark:bg-slate-900 dark:text-slate-300 antialiased overflow-x-hidden selection:bg-blue-200">
+
+    <!-- Header / Navbar -->
+    <header class="fixed w-full top-0 z-50 bg-white dark:bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="assets/comsa-logo.png" alt="COMSA Logo" class="w-12 h-12 rounded-full object-cover shadow-sm anti-gravity-subtle">
+                <div>
+                    <h1 class="font-bold text-xl text-primary leading-tight">COMSA</h1>
+                    <p class="text-xs text-gray-500 dark:text-slate-500 font-medium">DKTE TEI</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a href="#about" class="text-sm font-medium hover:text-secondary transition-colors">About</a>
+                <a href="#offerings" class="text-sm font-medium hover:text-secondary transition-colors">Offerings</a>
+                <a href="#events" class="text-sm font-medium hover:text-secondary transition-colors">Events</a>
+                <a href="#team" class="text-sm font-medium hover:text-secondary transition-colors">Team</a>
+            </nav>
+            <div class="flex gap-4 items-center">
+                <div class="hidden md:flex gap-3 text-gray-500 dark:text-slate-500">
+                    <a href="https://www.instagram.com/_comsa_dkte?stkn=MXBpZHdwMG1maXU2OQ==" target="_blank" class="hover:text-pink-600 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://www.linkedin.com/company/comsa-dkte-communication-students-association/" target="_blank" class="hover:text-blue-700 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                </div>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button" class="w-10 h-10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none rounded-full transition-colors">
+                    <i id="theme-toggle-dark-icon" class="fas fa-moon text-lg"></i>
+                    <i id="theme-toggle-light-icon" class="hidden fas fa-sun text-lg"></i>
+                </button>
+
+                <a href="javascript:void(0)" class="hidden md:inline-flex px-5 py-2.5 bg-gray-400 dark:bg-slate-700 text-white dark:text-slate-300 text-sm font-semibold rounded-full cursor-not-allowed">
+                    Coming Soon
+                </a>
+                <button class="md:hidden text-gray-600 dark:text-slate-400 text-2xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white dark:bg-slate-800/95 backdrop-blur-md flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300">
+        <a href="#about" class="text-2xl font-bold text-gray-800 dark:text-slate-200 mobile-link">About</a>
+        <a href="#offerings" class="text-2xl font-bold text-gray-800 dark:text-slate-200 mobile-link">Offerings</a>
+        <a href="#events" class="text-2xl font-bold text-gray-800 dark:text-slate-200 mobile-link">Events</a>
+        <a href="#team" class="text-2xl font-bold text-gray-800 dark:text-slate-200 mobile-link">Team</a>
+        <div class="flex gap-6 mt-4">
+            <a href="https://www.instagram.com/_comsa_dkte?stkn=MXBpZHdwMG1maXU2OQ==" target="_blank" class="text-3xl text-gray-600 dark:text-slate-400"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/comsa-dkte-communication-students-association/" target="_blank" class="text-3xl text-gray-600 dark:text-slate-400"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <a href="javascript:void(0)" class="mt-4 px-8 py-3 bg-gray-400 dark:bg-slate-700 text-white text-lg font-semibold rounded-full cursor-not-allowed text-center">
+            Coming Soon
+        </a>
+    </div>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-[90vh] flex items-center justify-center px-6 py-20 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+            <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-80 h-80 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+            
+            <div class="max-w-4xl mx-auto text-center z-10 reveal-up">
+                <div class="inline-block mb-4 px-4 py-1.5 bg-blue-50 text-blue-700 text-sm font-semibold rounded-full border border-blue-100 shadow-sm anti-gravity-element">
+                    Welcome to the Next Generation of Communicators
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-[1.1] mb-6">
+                    Connect, Inspire & <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Empower</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 dark:text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    DKTE’s Electronics & Telecommunication Engineering Department presents a premium community for forward-thinking individuals.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#events" class="px-8 py-4 bg-primary text-white text-base font-semibold rounded-full hover:bg-blue-800 transition-all transform hover:-translate-y-1 hover:shadow-xl w-full sm:w-auto text-center flex items-center justify-center gap-2 group">
+                        Event Registration
+                        <i class="fas fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                    </a>
+                    <a href="#about" class="px-8 py-4 bg-white dark:bg-slate-800 text-gray-800 dark:text-slate-200 border border-gray-200 dark:border-slate-700 text-base font-semibold rounded-full hover:bg-gray-50 dark:bg-slate-900/50 transition-all transform hover:-translate-y-1 hover:shadow w-full sm:w-auto text-center">
+                        Discover More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us & Vision -->
+        <section id="about" class="py-24 bg-white dark:bg-slate-800 relative">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal-up">
+                    <h2 class="text-sm font-bold tracking-widest text-secondary uppercase mb-3">About Us</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                        A dynamic community of communication enthusiasts.
+                    </h3>
+                    <p class="text-gray-600 dark:text-slate-400 text-lg leading-relaxed mb-6">
+                        The Communication Students Association (COMSA) is dedicated to fostering learning, networking, and career development opportunities for students pursuing degrees in communication and related fields. Our mission is to connect, inspire, and empower the next generation of communicators.
+                    </p>
+                </div>
+                <div class="relative reveal-up delay-100">
+                    <div class="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl anti-gravity-container">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Students collaborating" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl anti-gravity-element max-w-[250px]">
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">Our Vision</h4>
+                        <p class="text-sm text-gray-600 dark:text-slate-400">To be a hub of inspiration and support, helping students excel and make a positive impact.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Offer -->
+        <section id="offerings" class="py-24 bg-gray-50 dark:bg-slate-900/50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                    <h2 class="text-sm font-bold tracking-widest text-secondary dark:text-blue-400 uppercase mb-3">What We Offer</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Empowering Your Journey</h3>
+                    <p class="text-gray-600 dark:text-slate-400 text-lg">Comprehensive resources and opportunities tailored for your academic and professional growth.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Networking -->
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 anti-gravity-card reveal-up delay-100 group">
+                        <div class="w-14 h-14 bg-blue-50 text-secondary rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Networking</h4>
+                        <p class="text-gray-600 dark:text-slate-400 leading-relaxed">Connect with fellow students, alumni, and industry professionals to expand your network and discover exciting career possibilities.</p>
+                    </div>
+
+                    <!-- Skill Development -->
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 anti-gravity-card reveal-up delay-200 group">
+                        <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Skill Development</h4>
+                        <p class="text-gray-600 dark:text-slate-400 leading-relaxed">Access resources, workshops, and events to enhance your communication skills, from public speaking to digital media.</p>
+                    </div>
+
+                    <!-- Career Support -->
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 anti-gravity-card reveal-up delay-300 group">
+                        <div class="w-14 h-14 bg-amber-50 text-accent rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Career Support</h4>
+                        <p class="text-gray-600 dark:text-slate-400 leading-relaxed">Stay informed about job/internship opportunities, receive career guidance, and gain insights from successful professionals.</p>
+                    </div>
+
+                    <!-- Community Engagement -->
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 anti-gravity-card reveal-up delay-400 group">
+                        <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Community</h4>
+                        <p class="text-gray-600 dark:text-slate-400 leading-relaxed">Engage in meaningful discussions, share ideas, and collaborate on projects related to the world of communication.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Event Section -->
+        <section id="events" class="py-24 bg-white dark:bg-slate-800 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 reveal-up">
+                    <h2 class="text-sm font-bold tracking-widest text-secondary uppercase mb-3">Featured Event</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Don't Miss Out</h3>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-slate-900/50 rounded-[2.5rem] p-4 md:p-8 shadow-lg hover:shadow-2xl transition-shadow duration-500 reveal-up delay-100 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center anti-gravity-container">
+                    <!-- Event Poster Image Space -->
+                    <div class="w-full lg:w-1/2 rounded-3xl overflow-hidden shadow-md relative group">
+                        <!-- Updated user's event poster -->
+                        <img src="assets/techvision-poster.jpg" alt="Techvision Event Poster" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-6 left-6 bg-white dark:bg-slate-800/95 backdrop-blur px-5 py-2 rounded-full text-sm font-bold text-primary shadow-lg flex items-center gap-2">
+                            <i class="far fa-calendar-alt"></i> Upcoming
+                        </div>
+                    </div>
+
+                    <!-- Event Details -->
+                    <div class="w-full lg:w-1/2 px-4 md:px-0 py-6">
+                        <div class="inline-block px-4 py-1.5 bg-green-100 text-green-800 text-xs font-bold rounded-full uppercase tracking-wider mb-6">
+                            SDG Prototype Competition
+                        </div>
+                        <h4 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">TECHVISION</h4>
+                        <div class="flex flex-col space-y-3 mb-8 text-gray-600 dark:text-slate-400">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-primary shadow-sm"><i class="far fa-clock"></i></div>
+                                <span class="font-medium">Reg Ends: 5th October 2026</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-primary shadow-sm"><i class="fas fa-map-marker-alt"></i></div>
+                                <span class="font-medium">Department of ENTC, DKTE</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-slate-400 text-lg mb-10 leading-relaxed">
+                            Join us for TechVision, organized by the E&TC Department in association with IEEE AESS and 5G Club! Showcase your innovative ideas and build working prototypes around Sustainable Development Goals (SDGs) to win exciting cash prizes.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8zVyq3W1WjVuFvKWZyeArimSyMMBHTkjG9d1x0O8k_P2t5Q/viewform?usp=publish-editor" id="event-reg-link" target="_blank" class="px-8 py-4 bg-primary text-white text-base font-bold rounded-full hover:bg-blue-800 transition-all transform hover:-translate-y-1 hover:shadow-xl text-center flex items-center justify-center gap-2 group">
+                                Registration
+                                <i class="fas fa-external-link-alt text-sm group-hover:scale-110 transition-transform"></i>
+                            </a>
+                            <button onclick="document.getElementById('event-modal').classList.remove('pointer-events-none', 'opacity-0'); document.getElementById('event-modal-content').classList.remove('scale-95', 'opacity-0'); document.body.classList.add('modal-open');" class="px-8 py-4 bg-white dark:bg-slate-800 text-gray-800 dark:text-slate-200 border border-gray-200 dark:border-slate-700 text-base font-bold rounded-full hover:border-gray-300 hover:bg-gray-50 dark:bg-slate-900/50 transition-all text-center flex items-center justify-center gap-2 transform hover:-translate-y-1 hover:shadow">
+                                Know More
+                                <i class="fas fa-info-circle text-gray-500 dark:text-slate-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership / Team Directory -->
+        <section id="team" class="py-24 bg-gray-50 dark:bg-slate-900/50 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                    <h2 class="text-sm font-bold tracking-widest text-secondary uppercase mb-3">Leadership</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Meet the Team</h3>
+                    <p class="text-gray-600 dark:text-slate-400 text-lg">The dedicated individuals driving COMSA forward.</p>
+                </div>
+
+                <div id="team-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
+                    <!-- Team members will be injected here via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 bg-primary relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
+            </div>
+            <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Join Our Journey</h2>
+                <p class="text-blue-100 text-lg md:text-xl mb-10 leading-relaxed max-w-3xl mx-auto">
+                    We welcome all communication students, regardless of your specialization or background. Whether you're interested in marketing, public relations, journalism, or any other facet of communication, COMSA is your platform for growth.
+                </p>
+                <a href="javascript:void(0)" class="inline-flex px-10 py-5 bg-gray-200 dark:bg-slate-800/50 text-gray-500 dark:text-slate-400 text-lg font-bold rounded-full cursor-not-allowed shadow-sm anti-gravity-element">
+                    Membership Coming Soon
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/comsa-logo.png" alt="COMSA Logo" class="w-12 h-12 rounded-full object-cover">
+                        <h2 class="font-bold text-2xl tracking-tight">COMSA</h2>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-sm">
+                        Empowering communication students at DKTE's Textile and Engineering Institute.
+                    </p>
+                    <img src="assets/dkte-logo.jpg" alt="DKTE Logo" class="h-12 w-auto mb-6 rounded bg-white dark:bg-slate-800 p-1">
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/_comsa_dkte?stkn=MXBpZHdwMG1maXU2OQ==" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/comsa-dkte-communication-students-association/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#offerings" class="hover:text-white transition-colors">What We Offer</a></li>
+                        <li><a href="#events" class="hover:text-white transition-colors">Events</a></li>
+                        <li><a href="#team" class="hover:text-white transition-colors">Leadership</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Contact Us</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-gray-500 dark:text-slate-500"></i>
+                            <span>DKTE's Textile & Engineering Institute,<br>Ichalkaranji, Maharashtra, India</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-gray-500 dark:text-slate-500"></i>
+                            <a href="mailto:comsacell@gmail.com" class="hover:text-white transition-colors">comsacell@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500 dark:text-slate-500">
+                <p>&copy; 2026 COMSA DKTE. All rights reserved.</p>
+                <p>Designed for the next generation of communicators.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Team Member Modal -->
+    <div id="team-modal" class="fixed inset-0 z-[100] flex items-end md:items-center justify-center pointer-events-none">
+        <div id="modal-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-400 ease-out"></div>
+        
+        <div id="modal-content" class="relative w-full md:w-auto md:max-w-2xl bg-white dark:bg-slate-800 rounded-t-3xl md:rounded-3xl shadow-2xl overflow-hidden transform translate-y-full md:translate-y-8 md:scale-95 opacity-0 transition-all duration-500 cubic-bezier-out">
+            <button id="close-modal" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-400 rounded-full flex items-center justify-center hover:bg-gray-200 dark:bg-slate-700 z-10 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="md:flex">
+                <div class="h-64 md:h-auto md:w-2/5 bg-gray-200 dark:bg-slate-700 relative">
+                    <img id="modal-img" src="" alt="Member" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8 md:w-3/5">
+                    <h3 id="modal-name" class="text-2xl font-bold text-gray-900 dark:text-white mb-1">Name</h3>
+                    <p id="modal-role" class="text-secondary font-medium mb-6">Role</p>
+                    <p id="modal-bio" class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6">
+                        Detailed biography goes here. This person is an integral part of the COMSA leadership team, driving initiatives and fostering a vibrant community for all members.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" target="_blank" id="modal-linkedin" class="w-10 h-10 rounded-full border border-gray-200 dark:border-slate-700 flex items-center justify-center text-gray-600 dark:text-slate-400 hover:bg-blue-50 hover:text-blue-600 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank" id="modal-email" class="w-10 h-10 rounded-full border border-gray-200 dark:border-slate-700 flex items-center justify-center text-gray-600 dark:text-slate-400 hover:bg-gray-100 dark:bg-slate-700 hover:text-gray-900 dark:text-white transition-colors"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Modal -->
+    <div id="event-modal" class="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-400 ease-out">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="document.getElementById('event-modal').classList.add('pointer-events-none', 'opacity-0'); document.getElementById('event-modal-content').classList.add('scale-95', 'opacity-0'); document.body.classList.remove('modal-open');"></div>
+        
+        <div id="event-modal-content" class="relative w-full max-w-4xl mx-4 bg-white dark:bg-slate-800 rounded-3xl shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-500 cubic-bezier-out max-h-[90vh] overflow-y-auto">
+            <button onclick="document.getElementById('event-modal').classList.add('pointer-events-none', 'opacity-0'); document.getElementById('event-modal-content').classList.add('scale-95', 'opacity-0'); document.body.classList.remove('modal-open');" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 dark:bg-slate-700/80 backdrop-blur text-gray-600 dark:text-slate-400 rounded-full flex items-center justify-center hover:bg-gray-200 dark:bg-slate-700 z-10 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="flex flex-col">
+                <div class="w-full bg-gray-200 dark:bg-slate-700 relative">
+                    <!-- Event Poster Full Size Placeholder -->
+                    <img src="assets/techvision-poster.jpg" alt="Event Poster Full" class="w-full h-auto object-cover">
+                </div>
+                <div class="p-8 md:p-12">
+                    <div class="inline-block px-4 py-1.5 bg-green-100 text-green-800 text-xs font-bold rounded-full uppercase tracking-wider mb-4">
+                        Innovate Today | Build a Sustainable Tomorrow
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">TECHVISION (SDG Prototype)</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white mb-2">Round 1: Idea Presentation</h5>
+                            <ul class="list-disc list-inside text-gray-600 dark:text-slate-400 space-y-2 mb-4">
+                                <li>Submission of PowerPoint Presentation</li>
+                                <li>Online Video PowerPoint Presentation</li>
+                                <li><span class="font-bold text-green-600">Completely FREE</span></li>
+                                <li>Last Date: 5th October</li>
+                            </ul>
+
+                            <h5 class="font-bold text-gray-900 dark:text-white mb-2">Important Dates:</h5>
+                            <ul class="list-disc list-inside text-gray-600 dark:text-slate-400 space-y-1">
+                                <li><strong>3rd Oct:</strong> Online Submission Starts</li>
+                                <li><strong>8th Oct:</strong> Submission Closes</li>
+                                <li><strong>10th Oct:</strong> 1st Round Result</li>
+                                <li><strong>17th Oct:</strong> Offline Model Presentation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white mb-2">Round 2: Model Presentation</h5>
+                            <ul class="list-disc list-inside text-gray-600 dark:text-slate-400 space-y-2 mb-4">
+                                <li>Working model prototype (Hardware/Software)</li>
+                                <li>Teams of 4-5 members</li>
+                                <li>1 Person Team Entry: ₹150</li>
+                                <li>>2 Persons Entry: ₹100 (Per Person)</li>
+                            </ul>
+
+                            <h5 class="font-bold text-gray-900 dark:text-white mb-2">Cash Prizes:</h5>
+                            <ul class="list-disc list-inside text-gray-600 dark:text-slate-400 space-y-1">
+                                <li><i class="fas fa-trophy text-yellow-500"></i> 1st Rank: ₹7,000</li>
+                                <li><i class="fas fa-medal text-gray-400"></i> 2nd Rank: ₹5,000</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-8">
+                        Organized by the Department of Electronics and Telecommunication Engineering in association with IEEE AESS and 5G Club. 
+                        <strong>SDG Themes include:</strong> Good Health and Well-being, Clean Water and Sanitation, Affordable and Clean Energy, Industry Innovation and Infrastructure, Sustainable Cities and Communities, Climate Action.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row justify-between items-center border-t border-gray-100 dark:border-slate-800 pt-8 gap-4">
+                        <div class="text-sm text-gray-500 dark:text-slate-400 text-center sm:text-left">
+                            <strong>Contact:</strong> ieeeaess3@gmail.com <br>
+                            <strong>Instagram:</strong> @ieee_aess.dkte
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8zVyq3W1WjVuFvKWZyeArimSyMMBHTkjG9d1x0O8k_P2t5Q/viewform?usp=publish-editor" id="event-reg-link-modal" target="_blank" class="px-10 py-4 bg-primary text-white text-lg font-bold rounded-full hover:bg-blue-800 transition-all transform hover:-translate-y-1 hover:shadow-xl text-center flex items-center gap-2">
+                            Go to Registration Form <i class="fas fa-external-link-alt text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/team-data.js?v=1.1"></script>
+    <script src="js/script.js?v=1.1"></script>
+</body>
+</html>
